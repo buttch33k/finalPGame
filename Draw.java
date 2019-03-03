@@ -42,13 +42,15 @@ public class Draw extends JComponent{
 		}
 		else if(state == 3){
 			resource = getClass().getResource("f3.png");
-		}	
+		}
 		else if(state == 4){
 			resource = getClass().getResource("f4.png");
 		}
 		else if(state == 5){
 			resource = getClass().getResource("f5.png");
-		}	
+			state = 0;
+		}
+
 		try{
 			image = ImageIO.read(resource);
 		}
@@ -60,9 +62,9 @@ public class Draw extends JComponent{
 	public void attackAnimation(){
 		Thread thread1 = new Thread(new Runnable(){
 			public void run(){
-				for(int ctr = 0; ctr < 4; ctr++){
+				for(int ctr = 0; ctr < 5; ctr++){
 					try {
-						if(ctr==3){
+						if(ctr==4){
 							resource = getClass().getResource("f0.png");
 						}
 						else{
